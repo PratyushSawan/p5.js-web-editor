@@ -34,7 +34,10 @@ function validateUsername(username) {
 }
 
 function validateEmail(email) {
-  return asyncValidate('email', email);
+  clearTimeout(timeoutId);
+  timeoutId = setTimeout(() => {
+    asyncValidate('email', email);
+  }, 500);
 }
 
 function SignupForm() {
