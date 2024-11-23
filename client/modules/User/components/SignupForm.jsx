@@ -25,17 +25,19 @@ function asyncValidate(fieldToValidate, value) {
     });
 }
 
-let timeoutId;
+let timeoutUsername;
+let timeoutEmail;
+
 function validateUsername(username) {
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(() => {
+  clearTimeout(timeoutUsername);
+  timeoutUsername = setTimeout(() => {
     asyncValidate('username', username);
   }, 500);
 }
 
 function validateEmail(email) {
-  clearTimeout(timeoutId);
-  timeoutId = setTimeout(() => {
+  clearTimeout(timeoutEmail);
+  timeoutEmail = setTimeout(() => {
     asyncValidate('email', email);
   }, 500);
 }
